@@ -11,4 +11,13 @@
 - resolve - extensions : 생략할 파일 확장자 기입.
 - preset : plugin들의 모음.
 - path : node 기능.
-
+##### preset-env 설정 
+`
+{
+  targets: {
+    browsers: ['last 2 chrome version'],
+  },
+  debug: true,
+}
+`<br/>
+https://github.com/browserslist/browserslist
