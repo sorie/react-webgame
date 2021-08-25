@@ -1,7 +1,7 @@
 const React = require('react');
 const { useState, useRef } = React;
 
-const WordRelay = () => { 
+const WordRelay = () => {
 	const [word, setWord] = useState('정소리');
 	const [value, setValue] = useState('');
 	const [result, setResult] = useState('');
@@ -31,8 +31,7 @@ const WordRelay = () => {
 		<>
 			<div>{word}</div>
 			<form onSubmit={onSubmitForm}>
-				<label htmlFor="wordInput"></label>
-				<input id="wordInput" className="wordInput" ref={inputRef} value={value} onChange={onChangeInput} />
+				<input ref={inputRef} value={value} onChange={onChangeInput} />
 				<button>입력!</button>
 			</form>
 			<div>{result}</div>
