@@ -22,3 +22,11 @@ browser 설정: 플러그인들을 브라우저 설정에 맞는 버전으로 �
 }
 `<br/>
 https://github.com/browserslist/browserslist
+
+#### Class의 경우 
+- es6에서 지원하는 기능으로 상단에는 constructor가 들어가 생성자가 들어간다.
+- 생성자에는 react에서 사용하는 state값을 명시해준다.
+
+#### Hooks의 경우
+- react hooks기능을 사용 할 경우 usestate useRef 등의 기능을 사용하여 this를 생략할 수 있다.
+
