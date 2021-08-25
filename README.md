@@ -33,8 +33,9 @@ https://github.com/browserslist/browserslist
 #### 4. import와 require 비교
 - webpack.config는 node가 실행시키기 때문에 노드 모듈 문법(const...)를 써야하고 clent.jsx는 webpack이 babel로 호환시켜 주기 때문에 es2015문법(import...)를 사용해도 된다. 
 - 노드 모듈 시스템에서 module.exports = {hello = 'a'}; 는 exports.hello = 'a'; 와 같다.
-- 예시
-`
+- 예시 
+<pre>
+<code>
 // es2015 모듈문법
 import React, {component} from 'react';
 
@@ -48,7 +49,7 @@ export default NumberBaseball; // import NumberBaseball from ...;
 // const React = require('react');
 // exports.hollo = 'hello';
 // exports.default = NumberBaseball;
-
-`
+<code>
+<pre>
 
 
