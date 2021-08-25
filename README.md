@@ -11,7 +11,8 @@
 - resolve - extensions : 생략할 파일 확장자 기입.
 - preset : plugin들의 모음.
 - path : node 기능.
-##### preset-env 설정 
+##### preset-env 설정
+browser 설정: 플러그인들을 브라우저 설정에 맞는 버전으로 설치해준다.
 `
 {
   targets: {
