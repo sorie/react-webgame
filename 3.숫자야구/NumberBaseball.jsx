@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef , memo } from 'react';
 import Try from './Try';
 
 function getNumbers() { //숫자 네 개를 겹치지 않고 뽑는 함수
@@ -11,11 +11,12 @@ function getNumbers() { //숫자 네 개를 겹치지 않고 뽑는 함수
 	return array;
 };// this를 안 쓰는 경우 밖으로 빼 다른곳에서도 호출한다.
 
-const NumberBaseball = () => {
+const NumberBaseball = memo(() => {
 	const [ result, setResult ] = useState('');
 	const [ value, setValue ] = useState('');
 	const [ answer, setAnswer ] = useState(getNumbers());
 	const [ tries, setTries ] = useState([]);
+	const [ onRefInput ] = useRef(null);
 
 	const onSubmitForm = (e) => {
 		e.preventDefault();
@@ -28,6 +29,7 @@ const NumberBaseball = () => {
 			setValue('');
 			setAnswer(getNumbers());
 			setTries([]);
+			onRefInput.current.focus();
 		} else { // 답 틀렸을때
 			const answerArray = value.split('').map((v) => parseInt(v));
 			let strike = 0;
@@ -52,6 +54,7 @@ const NumberBaseball = () => {
 				});
 				setValue('');
 			}
+			onRefInput.current.focus();
 		}
 	};
 
@@ -63,7 +66,7 @@ const NumberBaseball = () => {
 		<>
 			<h1>{result}</h1>
 			<form onSubmit={onSubmitForm}>
-				<input maxLength={4} value={value} onChange={onChangeInput} />
+				<input ref={onRefInput} maxLength={4} value={value} onChange={onChangeInput} />
 			</form>
 			<div>시도: {tries.length}</div>
 			<ul>
@@ -76,6 +79,6 @@ const NumberBaseball = () => {
 			</ul>
 		</>
 	);
-};
+});
 
 export default NumberBaseball;
