@@ -57,3 +57,15 @@ export default NumberBaseball; // import NumberBaseball from ...;
 - 리덕스 : 데이터 상속과 위 컴포넌트에게 자유롭게 데이터 전달 가능.
 
 
+#### 6. PureComponent(class)와 memo(hooks)
+- 변경되는 데이터 외에 렌더링을 막기 위해서 쓰는 기능.
+- 커스텀을 하기 위해선 shouldComponentUpdate를 사용.
+
+
+#### 주의사항
+1. render 안에서 setState 사용 하면 안됨. 
+- render시 setState작동 되면서 무한반복됨.
+2. props를 받은 곳에서 직접적으로 변경하면 안됨.
+- props가 명시된 부모에서 변경해야 함. 
+- 변경해줘야 할때는 state에 넣어서 변경.
+
