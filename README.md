@@ -49,7 +49,11 @@ export default NumberBaseball; // import NumberBaseball from ...;
 // const React = require('react');
 // exports.hollo = 'hello';
 // exports.default = NumberBaseball;
-<code>
-<pre>
+</code>
+</pre>
+
+#### 5. props와 리덕스
+- props : 불러오는 컴포넌트에게 데어터를 전달할 때 사용. 
+- 리덕스 : 데이터 상속과 위 컴포넌트에게 자유롭게 데이터 전달 가능.
 
 
