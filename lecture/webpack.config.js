@@ -2,9 +2,9 @@ const path = require('path');
 const RefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = {
-	name: 'word-relay-dev',
+	name: 'numberbaseball-setting',
 	mode: 'development', //실서비스: production
-	devtool: 'inline-source-map',
+	devtool: 'eval',
 	resolve: {
     extensions: ['.js', '.jsx'],
   },//입력 확장자 생략 가능하도록 감지해주는 곳.
