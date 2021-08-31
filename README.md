@@ -57,3 +57,7 @@ export default NumberBaseball; // import NumberBaseball from ...;
 - 리덕스 : 데이터 상속과 위 컴포넌트에게 자유롭게 데이터 전달 가능.
 
 
+#### 6. PureComponent(class)와 memo(hooks)
+- 변경되는 데이터 외에 렌더링을 막기 위해서 쓰는 기능.
+- 커스텀을 하기 위해선 shouldComponentUpdate를 사용.
+
