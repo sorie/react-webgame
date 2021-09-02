@@ -69,3 +69,16 @@ export default NumberBaseball; // import NumberBaseball from ...;
 - props가 명시된 부모에서 변경해야 함. 
 - 변경해줘야 할때는 state에 넣어서 변경.
 
+#### 7. 라이프사이클
+클레스의 경우 
+-> constructor -> render -> ref -> componentDidMount 
+-> (setState/props 바뀔때) -> shouldComponentUpdate(true) -> render -> componentDidUpdate
+부모가 나를 없앴을 때 -> componentWillUnmount -> 소멸
+
+<pre>
+<code>
+componentDidMount() { // 컴포넌트가 첫 렌더링된 후, 리렌더링 될때는 수행되지 않는다 }
+componentDidUpdate() { // 리렌더링 후 }
+componentWillUnMount() { // 컴포넌트가 제거되기 직전 }
+</code>
+</pre>
