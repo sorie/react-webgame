@@ -102,14 +102,14 @@ componentWillUnMount() { // 컴포넌트가 제거되기 직전 }co
 <pre>
 <code>
 useEffect(() => { // componentDidMount, componentDidUpdate 역할(1대1 대응은 아님)
-  console.log('다시 실행');
+  console.log('다시 실행');//componentDidMount
   interval.current = setInterval(changeHand, 100);
   return () => { // componentWillUnMount 역할
     console.log('종료');
     clearInterval(interval.current);
   }
 }, [imgCoord]);
-//두번째 인수 배열에 넣은 값(imgCoord)들이 바뀔 때 useEffect가 실행.
+//두번째 인수 배열에 넣은 값(imgCoord)들이 바뀔 때 useEffect가 실행.(componentDidUpdate)
 </code>
 </pre>
 
@@ -119,6 +119,61 @@ useEffect(() => { // componentDidMount, componentDidUpdate 역할(1대1 대응�
 <pre>
 <code>
 const lottoNumbers = useMemo(() => getWinNumbers(), []);
+OR
+const [winBalls, setWinballs]  = useState([]);
+const lottoNumbers = useMemo(() => getWinNumbers(), [winBalls]);//winBalls값이 변경될 때마다 저장된다.
 </code>
 </pre>
 
+#### 10. useCallback
+- useMemo는 결과값을 기억한다면, useCallback은 함수를 기억한다.
+- 부모가 자식에게 함수를 전달하는 경우 useCallback를 사용해야 자식도 매번 렌더링 되는것을 막을 수 있다.
+- 예시
+
+<pre>
+<code>
+const Lotto = () => {
+... 생략
+  const onClickRedo = useCallback(() => {
+		setWinNumbers(getWinNumbers());
+		setWinballs([]);
+		setBonus(null);
+		setRedo(false);
+		timeouts.current = [];
+	});
+... 생략
+}
+</code>
+</pre>
+
+<주의사항>
+- usecallback 안에서 사용하는 state값은 두번째 인자값에 넣어야 바뀐다.
+- 예시
+<pre><code>
+const onClickRedo = useCallback(() => {
+  console.log('onClickRedo');
+  console.log(winNumbers);
+  setWinNumbers(getWinNumbers());
+  setWinballs([]);
+  setBonus(null);
+  setRedo(false);
+  timeouts.current = [];
+},[winNumbers]);
+</code></pre>
+
+
+<Hooks 주의사항>
+- useState순서가 엄격하여 조건문으로 감싸면 안된다.
+- useEffect같은 함수 안에서 useState를 넣으면 안된다.
+- componentDidUpdate에서만 실행하고 싶은 경우
+
+<pre><code>
+const mounted = useRef(false);
+useEffect(() => {
+  if(!mounted.current) {
+    mounted.current = true;
+  } else {
+    //실행기능
+  }
+}, [변경값]);
+</code></pre>
