@@ -113,3 +113,12 @@ useEffect(() => { // componentDidMount, componentDidUpdate 역할(1대1 대응�
 </code>
 </pre>
 
+#### 9. useMemo
+- hooks는 전체 component가 실행되기 때문에 따로 뺀 복잡한 함수 결과값은 useMemo를 사용하여 캐시로 저장해 사용한다.
+- 예시
+<pre>
+<code>
+const lottoNumbers = useMemo(() => getWinNumbers(), []);
+</code>
+</pre>
+
