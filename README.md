@@ -84,8 +84,12 @@ export default NumberBaseball; // import NumberBaseball from ...;
 <pre>
 <code>
 componentDidMount() { // 컴포넌트가 첫 렌더링된 후, 리렌더링 될때는 수행되지 않는다 }
-componentDidUpdate() { // 리렌더링 후 }
-componentWillUnMount() { // 컴포넌트가 제거되기 직전 }
+componentDidUpdate(prevProps, prevState) {// 리렌더링 후
+  if(this.state.winBalls.length === 0){ //해당 값이 초기화 되었을 때 실행.
+    this.runTimeouts();
+  }
+};
+componentWillUnMount() { // 컴포넌트가 제거되기 직전 }co
 </code>
 </pre>
 
