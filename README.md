@@ -66,6 +66,7 @@ export default NumberBaseball; // import NumberBaseball from ...;
 #### 6. PureComponent(class)와 memo(hooks)
 - 변경되는 데이터 외에 렌더링을 막기 위해서 쓰는 기능.
 - 커스텀을 하기 위해선 shouldComponentUpdate를 사용.
+- 자식을 메모 사용하면 위 부모도 메모 사용가능.
 
 
 #### <주의사항>
