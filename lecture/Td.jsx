@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useRef, useCallback, useEffect } from 'react';
 import { CLICK_CELL } from './TicTacToe';
 
 const Td = ({ rowIndex, cellIndex, dispatch, cellData }) => {

@@ -81,7 +81,9 @@ const TicTacToe = () => {
 
 		if(win) { // 승리시
 			dispatch({ type: SET_WINNER, winner: turn });
-			dispatch({ type: RESET_GAME });
+			setTimeout(() => {
+				dispatch({ type: RESET_GAME });
+			}, 500);
 		} else {
 			let all = true; // -> 무승부라는 뜻
 			tableData.forEach((row) => { // 무승부 검사
@@ -92,7 +94,9 @@ const TicTacToe = () => {
 				});
 			});
 			if(all) {
-				dispatch({ type: RESET_GAME });
+				setTimeout(() => {
+					dispatch({ type: RESET_GAME });
+				}, 500);
 			} else {
 				dispatch({ type: CHANGE_TURN });
 			}
