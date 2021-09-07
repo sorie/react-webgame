@@ -128,6 +128,7 @@ const lottoNumbers = useMemo(() => getWinNumbers(), [winBalls]);//winBalls값이
 #### 10. useCallback
 - useMemo는 결과값을 기억한다면, useCallback은 함수를 기억한다.
 - 부모가 자식에게 함수를 전달하는 경우 useCallback를 사용해야 자식도 매번 렌더링 되는것을 막을 수 있다.
+- 함수가 props로 들어가 있을 경우 useCallbak을 사용하여 재호출을 막을 수 있다.
 - 예시
 
 <pre>
