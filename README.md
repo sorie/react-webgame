@@ -197,4 +197,6 @@ useEffect(() => {
 - 해당 value는 useMemo를 해주어야 전체 리렌더링을 막을 수 있다.(캐싱)
 - 자식들은 이제 useContext를 사용하여 데이터 전달 받기.
 - useMemo 사용, memo사용, render 부분도 따로 빼기 등 최적화 하기.
-
+<br/><br/>
+강의주소 :(제로초의 웹 게임을 만들며 배우는 React) https://www.inflearn.com/course/web-game-react/ <br/>
+리액트를 공부하면서 보면 좋은 문서 : https://reactrouter.com/web/example
