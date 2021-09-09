@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from 'react';
+import React, { useCallback, useContext, memo, useMemo } from 'react';
 import { TableContext, CODE, OPEN_CELL, CLICK_MINE, FLAG_CELL, NORMLIZE_CELL, QUESTION_CELL } from './MineSearch';
 
 const getTdStyle = (code) => {
@@ -49,7 +49,7 @@ const getTdText = (code) => {
 	}
 };
 
-const Td = ({ rowIndex, cellIndex }) => {
+const Td = memo(({ rowIndex, cellIndex }) => {
 	const { tableData, dispatch, halted } = useContext(TableContext);
 
 	const onClickTd = useCallback(() => {
@@ -95,13 +95,19 @@ const Td = ({ rowIndex, cellIndex }) => {
 		 }
 	}, [tableData[rowIndex][cellIndex], halted]);
 
+	console.log('td rendering');
+	return <RealTd onClickTd={onClickTd} onRightClickTd={onRightClickTd} data={tableData[rowIndex][cellIndex]} />;
+});
+
+const RealTd = memo(({ onClickTd, onRightClickTd, data }) => {
+	console.log('real td rendering');
 	return (
 		<td
-			style={getTdStyle(tableData[rowIndex][cellIndex])}
+			style={getTdStyle(data)}
 			onClick={onClickTd}
 			onContextMenu={onRightClickTd}
-		>{getTdText(tableData[rowIndex][cellIndex])}</td>
+		>{getTdText(data)}</td>
 	)
-};
+})
 
 export default Td;
