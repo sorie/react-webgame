@@ -190,3 +190,11 @@ useEffect(() => {
 }, [rowIndex, cellIndex, dispatch, cellData]);	
 </code>
 </pre>
+
+11. Context Api 사용 방법
+- createContext 자식에서 사용할 data 명시.
+- TableContext.Provider 에서 자식 컴포넌트 감싸고 전달한 value 태그 속성으로 넣기.
+- 해당 value는 useMemo를 해주어야 전체 리렌더링을 막을 수 있다.(캐싱)
+- 자식들은 이제 useContext를 사용하여 데이터 전달 받기.
+- useMemo 사용, memo사용, render 부분도 따로 빼기 등 최적화 하기.
+
