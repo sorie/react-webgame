@@ -5,6 +5,8 @@ import Lotto from '../6.로또/LottoClass';
 
 class GameMatcher extends Component {
 	render() {
+		let urlSearchParams = new URLSearchParams(this.props.location.search.slice(1));
+		console.log(urlSearchParams.get('name'));
 		if (this.props.match.params.name === 'number-baseball') {
 			return <NumberBaseball />
 		} else if (this.props.match.params.name === 'rock-scissors-paper') {
