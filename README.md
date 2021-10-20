@@ -1,5 +1,5 @@
 ## React Study
-### React lecture example
+### React webgame example
 - 라이브러리로 react실행 해보기.
 - class, consttrutor로 react실행.
 - hooks로 react 실행.
