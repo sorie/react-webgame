@@ -1,4 +1,4 @@
-## react-webgame
+## React Study
 ### React lecture example
 - 라이브러리로 react실행 해보기.
 - class, consttrutor로 react실행.
@@ -200,3 +200,10 @@ useEffect(() => {
 <br/><br/>
 강의주소 :(제로초의 웹 게임을 만들며 배우는 React) https://www.inflearn.com/course/web-game-react/ <br/>
 리액트를 공부하면서 보면 좋은 문서 : https://reactrouter.com/web/example
+
+<br/><br/>
+원문 한글문서 비교 <br />
+원문 : https://reactjs.org/docs/react-component.html#constructor<br />
+한글문서 : https://ko.reactjs.org/docs/react-component.html#constructor<br />
+
+
