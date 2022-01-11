@@ -116,6 +116,8 @@ useEffect(() => { // componentDidMount, componentDidUpdate 역할(1대1 대응�
 
 #### 9. useMemo
 - hooks는 전체 component가 실행되기 때문에 따로 뺀 복잡한 함수 결과값은 useMemo를 사용하여 캐시로 저장해 사용한다.
+- 동일한 입력이 다시 발생할 때 useMemo는 function을 호출하지 않고 입력에 대해 캐시된 결과값을 리턴한다.(같은입력값 => 같은결과값이기 때문에 다시 실행할 필요가 없다.)
+- useMemo 캐싱 기술을 이용해 성능을 향상시키고, 함수형 컴포넌트에서는 prop 값들 또한 캐싱하는 것 또한 도움이 된다.
 - 예시
 <pre>
 <code>
